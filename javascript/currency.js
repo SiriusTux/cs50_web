@@ -14,10 +14,12 @@ document.addEventListener('DOMContentLoaded', () => {
         fetch("https://api.apilayer.com/exchangerates_data/latest?symbols=&base=EUR", requestOptions)
         .then(response => response.json())
         .then(data => {
+            const number = parseFloat(document.querySelector('#number').value);
             const currency = document.querySelector('#currency').value.toUpperCase();
             const rate = data.rates[currency];
             if (rate !== undefined) {
-                document.querySelector('#result').innerHTML = `At curent rate 1 EUR is equal to ${rate.toFixed(3)} ${currency}.`;
+                const result = number * rate
+                document.querySelector('#result').innerHTML = `At curent rate ${number} EUR is equal to ${result.toFixed(3)} ${currency}.`;
             } else {
                 document.querySelector('#result').innerHTML = `${currency} is not a valid currency.`;
             }
