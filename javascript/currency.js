@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const currency = document.querySelector('#currency').value.toUpperCase();
             const rate = data.rates[currency];
             if (rate !== undefined) {
-                document.querySelector('#result').innerHTML = `1 EUR is equal to ${rate.toFixed(3)} ${currency}.`;
+                document.querySelector('#result').innerHTML = `At curent rate 1 EUR is equal to ${rate.toFixed(3)} ${currency}.`;
             } else {
                 document.querySelector('#result').innerHTML = `${currency} is not a valid currency.`;
             }
