@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (rate !== undefined) {
                 document.querySelector('#result').innerHTML = `1 EUR is equal to ${rate.toFixed(3)} ${currency}.`;
             } else {
-                document.querySelector('#result').innerHTML = 'Invalid currency.';
+                document.querySelector('#result').innerHTML = `${currency} is not a valid currency.`;
             }
         })
         .catch(error => {
